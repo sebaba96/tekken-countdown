@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+	.container {
+		position: relative;
+		text-align: center;
+		background-color: #f542cb;
+	}
+
+	ul {
+		display: inline-flex;
+		list-style: none;
+		font-size: 5rem;
+		text-align: center;
+	}
+
+	#opis {
+		padding-top: 5%;
+		font-size: 2rem;
+	}
+</style>
+<head>
+	<title>Tekken party countdown</title>
+</head>
+<body>
+	<div class="container">
+	<div id="opis">
+		<p>ODBROJAVANJE ZA ULTIMATIVNI <I>TEKKEN</I> PARTY NA SKIDANJE</p>
+	</div>
+	<div id="tekken">
+		<ul id="days_counter">
+			<li id="days">00</li>
+			<li>:</li>
+			<li id="hours">00</li>
+			<li>:</li>
+			<li id="minutes">00</li>
+			<li>:</li>
+			<li id="seconds">00</li>
+		</ul>
+	</div>
+	<img src="https://media1.giphy.com/media/UtcBRO8cxulRzkrVLc/giphy.gif">
+</div>
+
+</body>
+<script type="text/javascript">
+	function setDifference () {
+		var current_date = new Date()
+
+		var
+			l_days = 22 - current_date.getDate(),
+			l_hours = 23 - current_date.getHours(),
+			l_min = 59 - current_date.getMinutes(),
+			l_sec = 59 - current_date.getSeconds();
+
+			l_days = l_days > -1 ? l_days - 1 : l_days + 1;
+
+
+
+
+
+			document.getElementById("days").textContent = (l_days = l_days.toString().length == 1 ? "0" + l_days : l_days);
+			document.getElementById("hours").textContent = (l_hours = l_hours.toString().length == 1 ? "0"+l_hours : l_hours);
+			document.getElementById("minutes").textContent = (l_min = l_min.toString().length == 1 ? "0"+l_min : l_min);
+			document.getElementById("seconds").textContent = (l_sec = l_sec.toString().length == 1 ? "0"+l_sec : l_sec);
+
+			return ;
+	}
+
+	window.addEventListener("load",setInterval(setDifference,1000));
+</script>
+</html>
